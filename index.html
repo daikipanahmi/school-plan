@@ -89,5 +89,22 @@
             <p class="disclaimer">※ 情報は2024年時点のものです。最新情報は各学校・塾の公式サイトでご確認ください。</p>
         </div>
     </footer>
+
+    <script>
+        // Enhanced mobile experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add touch feedback for cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-5px) scale(0.98)';
+                });
+                
+                card.addEventListener('touchend', function() {
+                    this.style.transform = 'translateY(-10px) scale(1)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
