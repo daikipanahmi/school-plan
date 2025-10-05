@@ -93,6 +93,10 @@ body {
     background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
 }
 
+.toefl-image {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
 .icon {
     font-size: 4rem;
     opacity: 0.8;
