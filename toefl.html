@@ -219,6 +219,75 @@
                                 <div class="level-cell toeic">-</div>
                             </div>
                         </div>
+                        
+                        <!-- 視覚的チャート（追加） -->
+                        <div class="visual-chart">
+                            <h4>📈 レベル対応チャート</h4>
+                            <div class="chart-bars">
+                                <div class="bar-container">
+                                    <div class="bar-label">C2 (最上級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar advanced" style="width: 100%">
+                                            <span class="bar-text">TOEFL iBT: 110-120 | 英検1級 | TOEIC: 990</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">C1 (上級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar advanced" style="width: 85%">
+                                            <span class="bar-text">TOEFL iBT: 95-109 | 英検準1級 | TOEIC: 945</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">B2 (中上級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar upper-intermediate" style="width: 70%">
+                                            <span class="bar-text">TOEFL iBT: 72-94 | 英検2級 | TOEIC: 785</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">B1 (中級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar intermediate" style="width: 55%">
+                                            <span class="bar-text">TOEFL iBT: 42-71 | TOEFL Junior: 280-300 | 英検準2級 | TOEIC: 550</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">A2 (初中級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar pre-intermediate" style="width: 40%">
+                                            <span class="bar-text">TOEFL Junior: 250-279 | 英検3級 | 英検Jr Gold | TOEIC: 225</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">A1 (初級)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar elementary" style="width: 25%">
+                                            <span class="bar-text">TOEFL Primary Step 2: 104-115 | TOEFL Junior: 200-249 | 英検4級 | 英検Jr Silver | TOEIC: 120</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bar-container">
+                                    <div class="bar-label">A0 (入門)</div>
+                                    <div class="bar-wrapper">
+                                        <div class="bar beginner" style="width: 10%">
+                                            <span class="bar-text">TOEFL Primary Step 1: 100-109 | 英検5級 | 英検Jr Bronze</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- 詳細表チャート -->
@@ -566,6 +635,17 @@
             const chartButtons = document.querySelectorAll('.chart-btn');
             const chartContents = document.querySelectorAll('.chart-content');
 
+            // Ensure the first chart is visible on load
+            if (chartContents.length > 0) {
+                chartContents.forEach((content, index) => {
+                    if (index === 0) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            }
+
             chartButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const targetChart = this.getAttribute('data-chart');
@@ -576,8 +656,19 @@
                     
                     // Add active class to clicked button and corresponding content
                     this.classList.add('active');
-                    document.getElementById(targetChart + '-chart').classList.add('active');
+                    const targetElement = document.getElementById(targetChart + '-chart');
+                    if (targetElement) {
+                        targetElement.classList.add('active');
+                    }
                 });
+            });
+
+            // Initialize visual chart animations
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.animation = 'fillBar 1.5s ease-out';
+                }, index * 200);
             });
 
             // Add data labels for mobile responsive design
