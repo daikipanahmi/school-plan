@@ -125,6 +125,217 @@
                 </div>
             </div>
 
+            <!-- 英語能力指標レベル対応表 -->
+            <div class="info-section">
+                <h3>📊 英語能力指標レベル対応表</h3>
+                <p>TOEFL、CEFR、英検、TOEIC、英検Jrの各指標のレベル対応を視覚的に確認できます。</p>
+                
+                <div class="level-chart-container">
+                    <div class="chart-controls">
+                        <button class="chart-btn active" data-chart="comparison">比較表</button>
+                        <button class="chart-btn" data-chart="detailed">詳細表</button>
+                    </div>
+                    
+                    <!-- 比較表チャート -->
+                    <div id="comparison-chart" class="chart-content active">
+                        <div class="level-chart">
+                            <div class="chart-header">
+                                <div class="level-column">CEFR</div>
+                                <div class="level-column">TOEFL iBT</div>
+                                <div class="level-column">TOEFL Primary</div>
+                                <div class="level-column">TOEFL Junior</div>
+                                <div class="level-column">英検</div>
+                                <div class="level-column">英検Jr</div>
+                                <div class="level-column">TOEIC</div>
+                            </div>
+                            
+                            <div class="chart-row advanced">
+                                <div class="level-cell cefr">C2</div>
+                                <div class="level-cell toefl-ibt">110-120</div>
+                                <div class="level-cell toefl-primary">-</div>
+                                <div class="level-cell toefl-junior">-</div>
+                                <div class="level-cell eiken">1級</div>
+                                <div class="level-cell eiken-jr">-</div>
+                                <div class="level-cell toeic">990</div>
+                            </div>
+                            
+                            <div class="chart-row advanced">
+                                <div class="level-cell cefr">C1</div>
+                                <div class="level-cell toefl-ibt">95-109</div>
+                                <div class="level-cell toefl-primary">-</div>
+                                <div class="level-cell toefl-junior">-</div>
+                                <div class="level-cell eiken">準1級</div>
+                                <div class="level-cell eiken-jr">-</div>
+                                <div class="level-cell toeic">945</div>
+                            </div>
+                            
+                            <div class="chart-row upper-intermediate">
+                                <div class="level-cell cefr">B2</div>
+                                <div class="level-cell toefl-ibt">72-94</div>
+                                <div class="level-cell toefl-primary">-</div>
+                                <div class="level-cell toefl-junior">-</div>
+                                <div class="level-cell eiken">2級</div>
+                                <div class="level-cell eiken-jr">-</div>
+                                <div class="level-cell toeic">785</div>
+                            </div>
+                            
+                            <div class="chart-row intermediate">
+                                <div class="level-cell cefr">B1</div>
+                                <div class="level-cell toefl-ibt">42-71</div>
+                                <div class="level-cell toefl-primary">-</div>
+                                <div class="level-cell toefl-junior">280-300</div>
+                                <div class="level-cell eiken">準2級</div>
+                                <div class="level-cell eiken-jr">-</div>
+                                <div class="level-cell toeic">550</div>
+                            </div>
+                            
+                            <div class="chart-row pre-intermediate">
+                                <div class="level-cell cefr">A2</div>
+                                <div class="level-cell toefl-ibt">-</div>
+                                <div class="level-cell toefl-primary">-</div>
+                                <div class="level-cell toefl-junior">250-279</div>
+                                <div class="level-cell eiken">3級</div>
+                                <div class="level-cell eiken-jr">Gold</div>
+                                <div class="level-cell toeic">225</div>
+                            </div>
+                            
+                            <div class="chart-row elementary">
+                                <div class="level-cell cefr">A1</div>
+                                <div class="level-cell toefl-ibt">-</div>
+                                <div class="level-cell toefl-primary">Step 2: 104-115</div>
+                                <div class="level-cell toefl-junior">200-249</div>
+                                <div class="level-cell eiken">4級</div>
+                                <div class="level-cell eiken-jr">Silver</div>
+                                <div class="level-cell toeic">120</div>
+                            </div>
+                            
+                            <div class="chart-row beginner">
+                                <div class="level-cell cefr">A0</div>
+                                <div class="level-cell toefl-ibt">-</div>
+                                <div class="level-cell toefl-primary">Step 1: 100-109</div>
+                                <div class="level-cell toefl-junior">-</div>
+                                <div class="level-cell eiken">5級</div>
+                                <div class="level-cell eiken-jr">Bronze</div>
+                                <div class="level-cell toeic">-</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 詳細表チャート -->
+                    <div id="detailed-chart" class="chart-content">
+                        <div class="detailed-chart">
+                            <div class="chart-section">
+                                <h4>🟢 初級レベル（A0-A1）</h4>
+                                <div class="level-details">
+                                    <div class="level-item">
+                                        <span class="level-name">英検Jr Bronze</span>
+                                        <span class="level-desc">基本的な単語とフレーズ</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検Jr Silver</span>
+                                        <span class="level-desc">簡単な会話と文章理解</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">TOEFL Primary Step 1</span>
+                                        <span class="level-desc">基礎的な英語力（8歳以上）</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検5級</span>
+                                        <span class="level-desc">中学初級レベル</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-section">
+                                <h4>🟡 中級レベル（A2-B1）</h4>
+                                <div class="level-details">
+                                    <div class="level-item">
+                                        <span class="level-name">英検Jr Gold</span>
+                                        <span class="level-desc">日常会話レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">TOEFL Primary Step 2</span>
+                                        <span class="level-desc">発展的な英語力（8歳以上）</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">TOEFL Junior 200-249</span>
+                                        <span class="level-desc">中学生向け基礎レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検4級</span>
+                                        <span class="level-desc">中学中級レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検3級</span>
+                                        <span class="level-desc">中学卒業レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">TOEFL Junior 250-300</span>
+                                        <span class="level-desc">中学生向け上級レベル</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-section">
+                                <h4>🔴 上級レベル（B2-C2）</h4>
+                                <div class="level-details">
+                                    <div class="level-item">
+                                        <span class="level-name">英検準2級</span>
+                                        <span class="level-desc">高校中級レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検2級</span>
+                                        <span class="level-desc">高校卒業レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検準1級</span>
+                                        <span class="level-desc">大学中級レベル</span>
+                                    </div>
+                                    <div class="level-item">
+                                        <span class="level-name">英検1級</span>
+                                        <span class="level-desc">大学上級レベル</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-legend">
+                    <h4>📝 指標の説明</h4>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <span class="legend-color cefr"></span>
+                            <span><strong>CEFR:</strong> ヨーロッパ言語共通参照枠</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color toefl-ibt"></span>
+                            <span><strong>TOEFL iBT:</strong> 大学レベルの英語力測定</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color toefl-primary"></span>
+                            <span><strong>TOEFL Primary:</strong> 小学生向け英語テスト</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color toefl-junior"></span>
+                            <span><strong>TOEFL Junior:</strong> 中学生向け英語テスト</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color eiken"></span>
+                            <span><strong>英検:</strong> 実用英語技能検定</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color eiken-jr"></span>
+                            <span><strong>英検Jr:</strong> 児童向け英語検定</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color toeic"></span>
+                            <span><strong>TOEIC:</strong> ビジネス英語力測定</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- 学習のポイント -->
             <div class="info-section">
                 <h3>学習のポイント</h3>
@@ -348,6 +559,58 @@
                 
                 card.addEventListener('touchend', function() {
                     this.style.transform = 'translateY(-10px) scale(1)';
+                });
+            });
+
+            // Chart switching functionality
+            const chartButtons = document.querySelectorAll('.chart-btn');
+            const chartContents = document.querySelectorAll('.chart-content');
+
+            chartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetChart = this.getAttribute('data-chart');
+                    
+                    // Remove active class from all buttons and contents
+                    chartButtons.forEach(btn => btn.classList.remove('active'));
+                    chartContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    this.classList.add('active');
+                    document.getElementById(targetChart + '-chart').classList.add('active');
+                });
+            });
+
+            // Add data labels for mobile responsive design
+            const levelCells = document.querySelectorAll('.level-cell');
+            const columnHeaders = ['CEFR', 'TOEFL iBT', 'TOEFL Primary', 'TOEFL Junior', '英検', '英検Jr', 'TOEIC'];
+            
+            levelCells.forEach((cell, index) => {
+                const rowIndex = Math.floor(index / 7);
+                const colIndex = index % 7;
+                if (colIndex < columnHeaders.length) {
+                    cell.setAttribute('data-label', columnHeaders[colIndex]);
+                }
+            });
+
+            // Add hover effects for level items
+            const levelItems = document.querySelectorAll('.level-item');
+            levelItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Add click animation for chart buttons
+            chartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
                 });
             });
         });
