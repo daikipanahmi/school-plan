@@ -41,14 +41,404 @@ body {
 
 /* Main Content */
 .main-content {
-    padding: 80px 0;
+    padding: 60px 0;
+}
+
+/* Recommender Section */
+.recommender-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 25px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+    color: white;
+}
+
+.recommender-intro {
+    text-align: center;
+}
+
+.recommender-intro h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.recommender-intro p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    line-height: 1.7;
+}
+
+.start-button {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 18px 50px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Questionnaire */
+.recommender-questionnaire {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    color: #333;
+}
+
+.progress-bar {
+    background: #e9ecef;
+    height: 8px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.question-container {
+    min-height: 400px;
+    margin-bottom: 30px;
+}
+
+.question-slide {
+    animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.question-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    line-height: 1.5;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.option-label:hover {
+    background: #e8f4ff;
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.option-label input:checked + .option-text {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.option-label:has(input:checked) {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.option-text {
+    font-size: 1rem;
+    color: #495057;
+    flex: 1;
+    line-height: 1.5;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-button {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prev-button {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.prev-button:hover:not(:disabled) {
+    background: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.next-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex: 1;
+}
+
+.next-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Results Section */
+.recommender-results {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    color: #333;
+}
+
+.recommender-results h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+}
+
+.result-summary {
+    margin-bottom: 40px;
+}
+
+.result-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+}
+
+.result-card.primary-result {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e8f4ff 100%);
+    border-left: 5px solid #667eea;
+}
+
+.result-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-highlight {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #667eea;
+    line-height: 1.6;
+}
+
+.school-list {
+    list-style: none;
+    padding: 0;
+}
+
+.school-list li {
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #667eea;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.school-list li:hover {
+    background: #e8f4ff;
+    transform: translateX(5px);
+}
+
+.advice-list {
+    list-style: none;
+    padding: 0;
+}
+
+.advice-list li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.7;
+    color: #555;
+}
+
+.advice-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.result-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.next-steps {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border-radius: 15px;
+}
+
+.next-steps h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.step-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 15px;
+}
+
+.step-card p {
+    color: #495057;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.restart-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 30px auto 0;
+}
+
+.restart-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Quick Access Section */
+.quick-access-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
 }
 
 .navigation-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    margin-bottom: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
 .card {
@@ -67,7 +457,7 @@ body {
 }
 
 .card-image {
-    height: 200px;
+    height: 180px;
     position: relative;
     overflow: hidden;
 }
@@ -103,11 +493,11 @@ body {
 }
 
 .card-content {
-    padding: 30px;
+    padding: 25px;
 }
 
 .card-content h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 10px;
     color: #2c3e50;
@@ -365,12 +755,105 @@ tr:hover {
     table {
         min-width: 800px;
     }
+    
+    .navigation-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    .card-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .recommender-section {
+        padding: 40px 30px;
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .main-title {
         font-size: 2rem;
+    }
+    
+    .recommender-section {
+        padding: 30px 20px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .recommender-intro h2 {
+        font-size: 1.5rem;
+    }
+    
+    .recommender-intro p {
+        font-size: 1rem;
+    }
+    
+    .start-button {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .recommender-questionnaire {
+        padding: 25px 20px;
+    }
+    
+    .question-container {
+        min-height: 300px;
+    }
+    
+    .question-title {
+        font-size: 1.2rem;
+    }
+    
+    .option-label {
+        padding: 15px 20px;
+    }
+    
+    .option-text {
+        font-size: 0.9rem;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-button {
+        width: 100%;
+        padding: 12px 30px;
+    }
+    
+    .recommender-results {
+        padding: 25px 20px;
+    }
+    
+    .recommender-results h2 {
+        font-size: 1.5rem;
+    }
+    
+    .result-card {
+        padding: 20px;
+    }
+    
+    .result-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .result-highlight {
+        font-size: 1.1rem;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
     }
     
     .navigation-cards {
@@ -436,6 +919,74 @@ tr:hover {
         font-size: 1.8rem;
     }
     
+    .recommender-section {
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+    
+    .recommender-intro h2 {
+        font-size: 1.3rem;
+    }
+    
+    .recommender-intro p {
+        font-size: 0.9rem;
+    }
+    
+    .start-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .recommender-questionnaire {
+        padding: 20px 15px;
+    }
+    
+    .question-title {
+        font-size: 1.1rem;
+    }
+    
+    .option-label {
+        padding: 12px 15px;
+    }
+    
+    .option-text {
+        font-size: 0.85rem;
+    }
+    
+    .nav-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .result-card {
+        padding: 15px;
+    }
+    
+    .result-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .result-highlight {
+        font-size: 1rem;
+    }
+    
+    .step-card {
+        padding: 20px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .restart-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
     .card-content {
         padding: 20px;
     }
@@ -484,11 +1035,15 @@ tr:hover {
     
     .navigation-cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
+        gap: 40px;
     }
     
     .card-content {
-        padding: 40px;
+        padding: 30px;
+    }
+    
+    .recommender-section {
+        padding: 60px;
     }
     
     .table-wrapper {
